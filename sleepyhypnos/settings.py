@@ -5,7 +5,7 @@
 '''
 
 
-import sys
+import sys,pdb
 
 
 
@@ -115,7 +115,7 @@ ROOT_URLCONF = 'urls'
 WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
-    sys.path[0]+"/templates",
+    sys.path[0]+"/template",
 )
 
 INSTALLED_APPS = (

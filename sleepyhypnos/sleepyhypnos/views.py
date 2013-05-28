@@ -33,7 +33,7 @@ def reg(request):
 	'''
 '''
 	if request.user.is_authenticated:
-		return HttpResponseRedirect("/logout")
+		return HttpResponseRedirect("/loginout")
 
 	else:
 		dic={}
@@ -47,11 +47,11 @@ def loginout(request):
 '''
 	if request.user.is_authenticated:
 		logout(request)
-		return HttpResponseRedirect("")
+		return HttpResponseRedirect("/")
 
 	else:
 		dic={}
-		return render_to_response("reg.html",dic)
+		return render_to_response("",dic)
 
 
 
@@ -60,7 +60,7 @@ def loginout(request):
 def change_password(request):
 	'''
 '''
-	return HttpResponse("")
+	return HttpResponse("change-password.html")
 
 
 
@@ -69,7 +69,7 @@ def change_password(request):
 def config(request):
 	'''
 '''
-	return HttpResponse("")
+	return HttpResponse("config.html")
 
 
 
@@ -78,7 +78,7 @@ def config(request):
 def switch_status(request):
 	'''
 '''
-	return HttpResponse("")
+	return HttpResponse("post.html")
 
 
 
@@ -87,7 +87,7 @@ def switch_status(request):
 def list(request,offsets):
 	'''
 '''
-	return HttpResponse("")
+	return HttpResponse("list.html")
 
 
 
@@ -96,7 +96,7 @@ def list(request,offsets):
 def sleep(request,offsets):
 	'''
 '''
-	return HttpResponse("")
+	return HttpResponse("sleep.html")
 
 
 
@@ -105,5 +105,5 @@ def sleep(request,offsets):
 def analysis(request,offsets):
 	'''
 '''
-	return HttpResponse("")
+	return HttpResponse("analysis.html")
 
