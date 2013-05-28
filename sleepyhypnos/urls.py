@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+'''
+sleepy hypnos
+
+
+author: kk(fkfkbill@gmail.com)
+'''
 
 
 from django.conf.urls import patterns, include, url

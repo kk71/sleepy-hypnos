@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
+sleepy hypnos
 
 
 author:kk(fkfkbill@gmail.com)
@@ -7,6 +8,9 @@ author:kk(fkfkbill@gmail.com)
 
 
 from django.http import HttpResponse,HttpResponseRedirect
+from djangomako import render_to_response
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -14,7 +18,13 @@ from django.http import HttpResponse,HttpResponseRedirect
 def index(request):
 	'''
 '''
-	return HttpResponse("")
+	if not request.user.is_authenticated:
+		dic={}
+		return render_to_response("login.html",dic)
+
+	else:
+		dic={}
+		return render_to_response("index.html",dic)
 
 
 
@@ -22,7 +32,12 @@ def index(request):
 def reg(request):
 	'''
 '''
-	return HttpResponse("")
+	if request.user.is_authenticated:
+		return HttpResponseRedirect("/logout")
+
+	else:
+		dic={}
+		return render_to_response("reg.html",dic)
 
 
 
@@ -30,11 +45,18 @@ def reg(request):
 def loginout(request):
 	'''
 '''
-	return HttpResponse("")
+	if request.user.is_authenticated:
+		logout(request)
+		return HttpResponseRedirect("")
+
+	else:
+		dic={}
+		return render_to_response("reg.html",dic)
 
 
 
 #======================================
+@login_required
 def change_password(request):
 	'''
 '''
@@ -43,6 +65,7 @@ def change_password(request):
 
 
 #======================================
+@login_required
 def config(request):
 	'''
 '''
@@ -51,6 +74,7 @@ def config(request):
 
 
 #======================================
+@login_required
 def switch_status(request):
 	'''
 '''
@@ -59,6 +83,7 @@ def switch_status(request):
 
 
 #======================================
+@login_required
 def list(request,offsets):
 	'''
 '''
@@ -67,6 +92,7 @@ def list(request,offsets):
 
 
 #======================================
+@login_required
 def sleep(request,offsets):
 	'''
 '''
@@ -75,6 +101,7 @@ def sleep(request,offsets):
 
 
 #======================================
+@login_required
 def analysis(request,offsets):
 	'''
 '''

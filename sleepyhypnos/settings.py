@@ -153,3 +153,6 @@ LOGGING = {
         },
     }
 }
+
+# default login url
+LOGIN_URL="/login"

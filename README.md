@@ -1,6 +1,6 @@
 sleepy-hypnos
 =============
 
-sleepy-hypnos is a simple diary-featured site but with more funny function:P
+睡神是一个简单的在线笔记本，当然他还有好多好玩的特色:P
 
-Now it's under development and everything is being processed secretly then~
+目前正在开发中，这一切都是秘密哦～
