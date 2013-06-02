@@ -1,0 +1,63 @@
+sleepy-hypnos  前端接口文档
+============================
+
+## base.html
+父模版（不直接渲染）
+这里罗列了父模版可能用到的渲染条件。
+username:
+	string:
+	None:
+datetime:datetime:
+
+
+
+## login.html
+登陆页面
+flag:
+	int:
+	None:
+
+
+
+
+## index.html
+主页
+
+
+
+## reg.html
+注册页面
+flag:
+	int:0 ,1 ,2
+
+
+## change-password .html
+更改密码页面
+flag:
+	int:0 ,1 ,2
+
+
+
+## config.html
+个人设置页面
+
+
+
+## post.html
+开始、结束睡觉的页面
+
+
+
+## sleep.html
+某一次睡眠的记录（包括始末时间和日记）
+
+
+
+## list.html
+罗列睡眠记录
+
+
+
+## analysis.html
+分析页面
+

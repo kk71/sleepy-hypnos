@@ -21,7 +21,6 @@ from django.utils.timezone import utc
 #===========================================
 class sleepAdmin(admin.ModelAdmin):
 	list_display=("user","finished","time_begin","time_end","time_period","diary")
-	exclude=()
 	ordering=("-time_begin",)
 	list_filter=("finished",)
 
