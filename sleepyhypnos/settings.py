@@ -127,6 +127,8 @@ INSTALLED_APPS = (
     'grappelli',
     'django.contrib.admin',
     "sleepyhypnos",
+
+    "south",
 )
 
 # A sample logging configuration. The only tangible logging
