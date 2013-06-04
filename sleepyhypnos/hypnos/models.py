@@ -8,7 +8,7 @@ author: kk(fkfkbill@gmail.com)
 
 from django.db import models
 from django.db.models.fields import TextField,DateTimeField,TimeField,BooleanField,SmallIntegerField
-from django.db.models import ForeignKey,ManyToManyField
+from django.db.models import ForeignKey,ManyToManyField,OneToOneField
 
 from django.contrib.auth.models import User
 
@@ -16,13 +16,14 @@ from django.contrib.auth.models import User
 
 #===================================
 class sleep(models.Model):
-	user=					ForeignKey(User)
+	user=					ForeignKey(User,default=)
 	finished=				BooleanField(default=False,verbose_name="已结束")
 	time_begin=				DateTimeField(verbose_name="起始时间")
 	time_end=				DateTimeField(blank=True,null=True,verbose_name="终止时间")
 	time_period=			TimeField(blank=True,null=True,verbose_name="时间周期")
 	to_archive=				ForeignKey("archive",verbose_name="归档于")
 	diary=					TextField(blank=True,null=True,verbose_name="日记")
+	test=					OneToOneField(User)
 
 	class Meta():
 		verbose_name="睡眠记录"

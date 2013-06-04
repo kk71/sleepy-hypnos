@@ -9,7 +9,7 @@ author:kK(fkfkbill@gmail.com)
 
 from django.contrib import admin
 
-from sleepyhypnos.models import *
+from hypnos.models import *
 
 from django.utils.timezone import template_localtime
 from datetime import datetime
@@ -35,5 +35,5 @@ class archiveAdmin(admin.ModelAdmin):
 
 
 #register to the admin
-admin.site.register(sleep,sleepAdmin)
+#admin.site.register(sleep,sleepAdmin)
 admin.site.register(archive,archiveAdmin)

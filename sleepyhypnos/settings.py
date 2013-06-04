@@ -126,8 +126,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'grappelli',
     'django.contrib.admin',
-    "sleepyhypnos",
+    "hypnos",
 
+    #put at the end
     "south",
 )
 

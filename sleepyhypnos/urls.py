@@ -13,7 +13,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 
-from sleepyhypnos import views
+from hypnos import views
 
 urlpatterns = patterns('',
 	url(r'^grappelli/', include('grappelli.urls')),
