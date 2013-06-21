@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+/* 注册页 */
+.register {
+	margin-top:-100px;
+	height:auto !important ;
+}
+.registerCenter {
+	margin-top:24px !important ;
+	margin-bottom:8px !important ;
+}
+.registerPrompt {
+	margin-top:4px;
+	font-size:14px;
+	color:#C00;
+}
+.registerInfo a {
+	color:#06C;
+}
+#registerPrompt1 {
+	display:block;
+}
+#registerPrompt2 {
+	display:block;
+}
+#registerPrompt3 {
+	display:block;
+}
+#registerPrompt4 {
+	display:block;
+}
+#registerPrompt5 {
+	display:block;
+}
+#CodePicture {
+	margin-top:8px;
+}
+.registerInfo {
+	color:#666;
+	margin-top:8px;
+}
+/* 登录页 */
+.login {
+	position:absolute;
+	top:160px;
+	right:18%;
+	padding:12px 18px 12px 18px;
+	width:420px;
+	height:308px;
+	background-color:#F9F9F9;
+	-moz-border-radius:12px; 
+    -webkit-border-radius:12px; 
+    border-radius:12px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+.login h2 {
+	padding:0px;
+	margin:0px;
+	font-weight:normal;
+	cursor:default;
+	display:block;
+}
+.loginCenter {
+	margin:40px auto auto auto;
+	width:270px;
+}
+.loginPrompt {
+	visibility:visible;
+	margin-top:-20px;
+	font-size:14px;
+	color:#C00;
+	
+}
+.login ul {
+	margin-top:40px;
+	display:block;
+	float:right;
+}
+.login ul li {
+	padding-left:16px;
+	display:block;
+	float:left;
+	list-style:none;
+}
+
+.login input {
+	padding-left:8px;
+	padding-right:8px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	margin-top:12px;
+	width:270px;
+	height:40px;
+	-moz-border-radius:4px; 
+    -webkit-border-radius:4px; 
+    border-radius:4px;
+	font-family:"微软雅黑", "黑体";
+	font-size:16px;
+	color:#999;
+	border:#CCC thin solid;
+}
+.btnLogin {
+	height:38px !important ;
+	font-size:18px !important ;
+	width:114px !important ;
+	color:#FFF !important ;
+	border:#06C thin solid !important ;
+	background-color:#39C;
+	cursor:pointer;
+}
+.btnLogin:hover {
+	height:38px !important ;
+	font-size:18px !important ;
+	width:114px !important ;
+	color:#FFF !important ;
+	background-color:#3fa3d5;
+	cursor:pointer;
+}
+.btnLogin:active {
+	height:38px !important ;
+	font-size:18px !important ;
+	width:114px !important ;
+	color:#FFF !important ;
+	background-color:#56b3e2;
+	cursor:pointer;
+}
+

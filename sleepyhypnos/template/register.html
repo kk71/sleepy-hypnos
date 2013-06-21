@@ -1,0 +1,24 @@
+<%inherit file="base.html"/>
+<%block name="main">
+<div class="login register">
+	<h2>帐号注册</h2>
+    <div class="loginCenter registerCenter">
+    <!--注册信息填写 -->
+    	<input name="registerAccount" id="registerAccount" type="text" placeholder="填写用户名" />
+     <!--若要隐藏红色的提示，将sh.js中的#registerPrompt1~5的属性dispaly改为none -->
+        <div class="registerPrompt" id="registerPrompt1">此用户名已被占用。</div>
+		<input name="registerPassword" id="registerPassword" type="password" placeholder="请创建一个密码" />
+        <div class="registerPrompt" id="registerPrompt2">请键入密码，然后重新键入该密码进行确认。</div>
+        <input name="registerRePassword" id="registerRePassword" type="password" placeholder="重新输入密码" />
+        <div class="registerPrompt" id="registerPrompt3">这些密码不匹配。</div>
+        <input name="registerMail" id="registerMail" type="text" placeholder="填写您的常用邮箱" />
+        <div class="registerPrompt" id="registerPrompt4">邮箱格式不正确，请填写正确邮箱地址。</div>
+        <div class="registerPrompt" id="CodePicture"><img src="/static/images/code1.jpg" width="218" height="48" /></div>
+         <input name="registerVerificationCode" id="registerVerificationCode" type="text" placeholder="填写验证码" />
+        <div class="registerPrompt" id="registerPrompt5">验证码不正确，请重新。</div>
+        <div class="registerInfo registerPrompt">请仔阅读<a href="#">服务协议</a>以及<a href="#">隐私和Cookie声明</a>。提交表示已接受条款。</div>
+        <input name="register" id="register" class="btnLogin" type="submit" value="提交"/>
+    </div>
+</div>
+</%block>
+

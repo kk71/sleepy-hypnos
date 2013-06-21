@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+/* 时间手风琴 */
+.diaryContainer {
+	z-index:98 !important ;
+	position:fixed;
+	margin-top:-40px;
+	width:100%;
+	height:100%;
+	background-image:url(../images/backgroundblack.png);
+	display:none;
+}
+#diaryContainer1 {
+	position:relative;
+}
+#diaryContainer2 {
+	background-color:#F00;
+	position:absolute;
+	right:50%;
+}
+.diary {
+	position:relative;
+	right:-50%;
+	top:-50%;
+	line-height:1.5;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	z-index:99 !important ;
+	padding-top:24px;
+	padding-left:28px;
+	padding-right:28px;
+	padding-bottom:44px;
+	background-color:#FFF;
+	width:560px;
+	color:#000;
+	-moz-border-radius:18px; 
+    -webkit-border-radius:18px; 
+    border-radius:18px;
+	height:auto;
+	overflow:hidden;
+}
+.diary h2 {
+	margin:0px;
+	padding:0px;
+}
+.diary h3 {
+	line-height:2em;
+	font-weight:normal;
+	margin:0px;
+	padding:0px;
+}
+.diary p {
+	margin:0px;
+	padding:0px;
+	text-indent:2em;
+	overflow:hidden;
+	max-height:84%;
+}
+#openTimeAccordion {
+	display:none;
+}
+#timeAccordion {
+	margin-left:-80px;
+	float:left;
+	text-shadow:1px 1px 1px #069;
+	color:#FFF;
+	font-family:"微软雅黑", "黑体";
+	text-align:right;
+	padding: 0 0 0 0;
+	width: 80px;
+}
+#timeAccordion li{
+	font-size:22px;
+	display: block;
+	font-weight:bold;
+	margin: 1px;
+	cursor: pointer;
+	padding: 5 5 5 7px;
+}
+#timeAccordion ul {
+	padding: 0 0 0 0;
+	display: none;
+}
+#timeAccordion ul li{
+	font-size:17px;
+	font-weight:bold;
+	cursor: auto;
+	padding: 0 0 0 7px;
+}
+#timeAccordion a:link {
+	text-decoration: none;
+	color:#FFF;
+}
+#timeAccordion a:hover {
+	text-decoration: none;
+	color:#FFF;
+}
+#timeAccordion a:visited {
+	text-decoration: none;
+	color:#FFF;
+}
+#timeAccordion a:active {
+	text-decoration: none;
+	color:#FFF;
+}
+.diaryMain {
+	margin:0 auto;
+	width:1040px;
+}
+.diaryField {
+	box-sizing:border-box;
+	padding-top:12px;
+	padding-left:8px;
+	float:right;
+}
+.chunk {
+	box-sizing:border-box;
+	display:block;
+	float:left;
+	width:25%;
+
+}
+.diaryPreview {
+	background-color:#FFF;
+	position:relative;
+	cursor:pointer;
+	border:#FFF medium solid;
+	margin:12px auto;
+	box-sizing:border-box;
+	display:block;
+	width:234px;
+	height:162px;
+	-moz-border-radius:2px 16px 32px 16px; 
+    -webkit-border-radius:2px 16px 32px 16px; 
+    border-radius:2px 16px 32px 16px;
+	overflow:hidden;
+}
+.diaryPreview h2 {
+	box-sizing:border-box;
+	padding:0px;
+	margin:0px;
+}
+.diaryPreview h3 {
+	color:#999;
+	font-weight:normal;
+	font-size:16px;
+	box-sizing:border-box;
+	padding:0px;
+	margin:0px;
+}
+.diaryPreview p {
+	box-sizing:border-box;
+	padding:0px 0px 0px 0px;
+	margin:0px;
+	color:#666;
+}
+.diaryPreview .star {
+	right:0px;
+	position:absolute;
+	width:42px;
+	height:40px;
+	background-repeat:no-repeat;
+	z-index:97;
+	background-image:none;
+}
+.diaryPreview .star:hover {
+	right:0px;
+	position:absolute;
+	width:42px;
+	height:40px;
+	background-repeat:no-repeat;
+	z-index:97;
+	background-image:url(../images/star.png);
+}
+.diaryPreview .star:visiter {
+	right:0px;
+	position:absolute;
+	width:42px;
+	height:40px;
+	background-repeat:no-repeat;
+	z-index:97;
+	background-image:url(../images/star.png);
+}
+.diaryPreview .star:active {
+	right:0px;
+	position:absolute;
+	width:42px;
+	height:40px;
+	background-repeat:no-repeat;
+	z-index:97;
+	background-image:url(../images/star.png);
+}

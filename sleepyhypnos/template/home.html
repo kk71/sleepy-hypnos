@@ -1,0 +1,17 @@
+## home.html
+<%inherit file="base.html"/>
+## ----------------------------
+<%block name="nav">
+<%include file="nav.html"/>
+</%block> 
+
+<%block name="main">
+<div class="homeContainer">
+    	<div class="logo"></div>
+        <div class="btnHomeMainDiv"><button class="btnHomeMain">我睡觉了<sup>~zZ</sup></button></div>
+        <div class="homeInput">
+        <textarea name="diary" type="text" class="homeInputInput" placeholder="在这边可以写写今天的小结和明天的计划。"></textarea>
+        </div>
+        <textarea name="diarySmall" type="text" class="homeInputInputSmall" placeholder="在这边可以写写今天的小结和明天的计划。"></textarea>
+</div>
+</%block>

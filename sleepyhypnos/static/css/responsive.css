@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* CSS Document */
+@media (max-width: 1440px) {
+.navContainer {
+	width:1040px;
+}
+}
+@media (max-width: 1200px) {
+.diaryMain {
+	margin:0 auto;
+	width:100%;
+}
+#timeAccordion {
+	margin-left:0px;
+}
+.chunk {
+	width:33.333333%;
+}
+.diaryField {
+	width:90%;
+}
+}
+@media (max-width: 1040px) {
+.navContainer {
+	width:980px;
+}
+}
+@media (max-width: 850px) {
+.chunk {
+	width:50%;
+}
+.diaryField {
+	width:85%;
+}
+}
+@media (max-width: 979px) {
+.navContainer {
+	width:100%;
+}
+/* 登录页 */
+.login {
+	position:static;
+	margin:10% auto auto auto;
+}
+.register {
+	margin-top:4%;
+}
+
+}
+@media (max-width: 600px) {
+.chunk {
+	width:100%;
+}
+.diaryField {
+	width:100%;
+}
+#openTimeAccordion {
+	background-color:#966;
+	display:block;
+	color:#FFF;
+	text-align:center;
+	cursor:pointer;
+	border-bottom:#633 medium solid;
+}
+#timeAccordion {
+	padding:0px;
+	margin:0px;
+	display:none;
+	font-weight:normal;
+	margin-top:0px;
+	background-color:#966;
+	width:100%;
+	font-size:14px;
+	text-align:center;
+	text-shadow:none;
+	border-bottom:#633 medium solid;
+}
+#timeAccordion li {
+	padding:0px;
+	margin:0px;
+	font-size:16px;
+}
+#timeAccordion li:hover {
+	background-color:#633;
+}
+#timeAccordion ul li {
+	padding:0px;
+	margin:0px;
+	font-size:14px;
+}
+#timeAccordion ul li:hover {
+	background-color:#633;
+}
+#timeAccordion a:link {
+	font-weight:normal;
+}
+#timeAccordion a:hover {
+	font-weight:normal;
+}
+#timeAccordion a:visited {
+	font-weight:normal;
+}
+#timeAccordion a:active {
+	font-weight:normal;
+}
+.diaryField {
+	padding-top:0px;
+}
+.diaryPreview {
+	width:95%;
+	padding:0px;
+	margin:15px 0 0 1.5%;
+}
+footer {
+	position:static;
+	margin:0px auto;
+	width:auto;
+	margin-top:16px;
+}
+}
+@media (max-width: 479px) {
+/* 登录页 */
+.login {
+	width:90%;
+}
+.login input {
+	width:90%;
+}
+/* NAV */
+.navBtn {
+	display:block;
+}
+#navUl {
+	display:none;
+	float:left;
+	background-color:#A15E7D;
+	width:100%;
+	height:100%;
+	padding:2px 0px 2px 0px;
+	margin:0px;
+	border-bottom:8px #8A365D solid;
+}
+.navLi {
+	text-align:left;
+	float:none;
+	margin:0px;
+	padding:0px;
+	z-index:98;
+	height:18px;
+	padding-left:6px;
+}
+#navLiMe {
+	height: 20px;
+	overflow:hidden;
+}
+#navLiMe:hover {
+	height: 20px;
+	overflow:hidden;
+}
+#navDropbox {
+	display:none;
+}
+/* MAIN */
+.logo {
+	background-image:url(../Images/logo479.png);
+	width:304px;
+	height:183px;
+}
+
+.btnHomeMainDiv {
+	margin-top:0px;
+	padding-left:150px;
+	width:140px;
+	height:28px;
+}
+.btnHomeMain {
+	margin:-12px 10px auto auto;
+	font-size:16px;
+	height:28px;
+	width:140px;
+	cursor:pointer;
+}
+.homeInputInputSmall {
+	display:block;
+}
+.homeInput {
+	display:none;
+}
+.homeInputInput {
+	display:none;
+	font-size:16px;
+	margin:70px auto 0px auto;
+	padding:10px 10% 10px 10%;
+	width:52%;
+	overflow:hidden;
+}
+/* FOOTER */
+footer {
+	position:static;
+	margin:0px auto;
+	width:auto;
+	margin-top:16px;
+}
+}
+@media (max-width: 320px) {
+.login {
+	margin-top:14px;
+	height:280px;
+}
+.registerCenter {
+	margin-top:24px !important ;
+	margin-bottom:8px !important ;
+}
+.login ul {
+	margin-top:20px;
+	font-size:12px;
+}
+.loginCenter {
+	margin-top:24px;
+	width:99% !important ;
+}
+.login input {
+	width:100% !important ;
+}
+.btnLogin:hover {
+	width:100% !important ;
+}
+/* MAIN */
+.logo {
+	background-image:url(../Images/logo320.png);
+	width:221px;
+	height:132px;
+}
+.homeInputInputSmall {
+	display:block;
+}
+.homeInput {
+	display:none;
+	margin-top:-18px;
+}
+.btnHomeMainDiv {
+	margin-top:-12px;
+	padding-left:108px;
+	width:100px;
+	height:24px;
+}
+.btnHomeMain {
+	margin:0px 10px auto auto;
+	font-size:14px;
+	height:24px;
+	width:100px;
+	line-height:0.5;
+	cursor:pointer;
+}
+.homeInputInput {
+	display:none;
+	font-size:14px;
+	margin:67px auto 0px auto;
+	padding:10px;
+	width:100%;
+	overflow:hidden;
+}
+/* FOOTER */
+footer {
+	position:static;
+	margin:0px auto;
+	width:auto;
+	margin-top:16px;
+}
+}
+
+

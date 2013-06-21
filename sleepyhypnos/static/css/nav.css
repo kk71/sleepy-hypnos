@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* nav */
+nav {
+	font-family:"微软雅黑", "宋体";
+	position:fixed;
+	top:0px;
+	z-index:97;
+}
+.navMedium {
+	height:40px;
+	width:100%;
+	background-color:#39C;
+}
+.navLogo {
+	float:left;
+	width:180px;
+	height:40px;
+	background-image:url(../images/navLogo1.png);
+}
+.navLogo h1 {
+	visibility:hidden;
+}
+.navBtn {
+	display:none;
+	float:right;
+	width:40px;
+	height:30px;
+	background-color:#65BFDF;
+	cursor:pointer;
+	margin:5px;
+	-moz-border-radius:12px; 
+    -webkit-border-radius:12px; 
+    border-radius:12px;
+	color:#D9EFF7;
+	font-size:16px;
+	line-height:1.8;
+	text-align:center;
+}
+.navUl {
+	float:right;
+	list-style:none;
+	margin:12px 0px 0px 0px;
+	padding:0px;
+	height:28px;
+}
+#navUl {
+	display:block;
+}
+.navLi {
+	display:block;
+	padding:0px 5px 0px 10px;
+	float:left;
+	height:28px;
+	width:64px;
+	text-align:right;
+}
+#navHome {
+	width:36px;
+}
+#navLiMe {
+	overflow: hidden;
+	height: 20px;
+	-webkit-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	-ms-transition: all 0.6s;
+	-o-transition: all 0.6s;
+	transition: all 0.2s;
+}
+#navLiMe:hover {
+	overflow:visible;
+	height:124px;
+}
+.navLi a:link {
+	color:#FFF;
+}
+.navLi a:hover {
+	color:#FFF;
+}
+.navLi a:visited {
+	color:#FFF;
+}
+.navLi a:active {
+	color:#FFF;
+}
+.navContainer {
+	background-color:#BEE3F0;
+	margin:0px auto;
+	padding:0px;
+	position:relative;
+}
+
+#navDropbox {
+	padding:0px 0px 0px 30px;
+	margin-top:7px;
+	right:0px;
+	width:132px;
+	float:right;
+	color:#999;
+	background-color:#FCC;
+	list-style:none;
+	text-align:left;
+	cursor:pointer;
+}
+.navDropboxLi:hover {
+	color:#999;
+	background-color:#F69;
+}

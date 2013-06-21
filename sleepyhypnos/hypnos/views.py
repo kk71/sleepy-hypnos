@@ -11,6 +11,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from djangomako import render_to_response
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+import pdb
 
 
 
@@ -32,8 +33,8 @@ def index(request):
 def reg(request):
 	'''
 '''
-	if request.user.is_authenticated:
-		return HttpResponseRedirect("/loginout")
+	if request.user.is_authenticated():
+		return HttpResponseRedirect("/log")
 
 	else:
 		dic={}
@@ -45,13 +46,13 @@ def reg(request):
 def loginout(request):
 	'''
 '''
-	if request.user.is_authenticated:
+	if request.user.is_authenticated():
 		logout(request)
 		return HttpResponseRedirect("/")
 
 	else:
 		dic={}
-		return render_to_response("",dic)
+		return render_to_response("login.html",dic)
 
 
 

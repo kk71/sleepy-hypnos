@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+/* HOME */
+
+/* MAIN */
+.homeContainer {
+	margin:40px auto 0px auto;
+}
+.logo {
+	margin:0px auto 0px auto;
+	background-image:url(../Images/logo.png);
+	width:366px;
+	height:235px;
+}	
+.btnHomeMainDiv {
+	margin:-26px auto 0px auto;
+	padding-left:194px;
+	width:160px;
+	height:34px;
+}
+.btnHomeMain {
+	font-family:"微软雅黑", "黑体";
+	border:thin solid #06C;
+	cursor:pointer;
+	text-align:center;
+	color:#FFF;
+	font-size:18px;
+	line-height:0.5;
+	width:160px;
+	height:34px;
+	background-color:#39C;
+	-moz-border-radius:32px; 
+    -webkit-border-radius:32px; 
+    border-radius:32px;
+}
+/* 主页输入框 */
+.homeInputInputSmall {
+	font-size:16px;
+	color:#CCC;
+	font-family:"微软雅黑", "黑体";
+	display:none;
+	margin:18px auto 0px auto;
+	width:92%;
+	height:200px;
+	-moz-border-radius:6px; 
+    -webkit-border-radius:6px; 
+    border-radius:6px;
+	border:#39C;
+}
+.homeInput {
+	position:absolute;
+	right:50%;
+	margin:-24px -272px 0px auto;
+	background-image: url(../Images/homeinput.png);
+	width:544px;
+	height:378px;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+
+.homeInputInput {
+		margin: 120px 10px 10px 88px;
+		width:400px;
+		height:200px;
+		border:none;
+		outline:none;
+		font-size:16px;
+		color:#CCC;
+		font-family:"微软雅黑", "黑体";
+		background:none;
+		overflow:hidden;
+}
+
