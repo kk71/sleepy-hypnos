@@ -3,6 +3,7 @@
 <div class="login register">
 	<h2>帐号注册</h2>
     <div class="loginCenter registerCenter">
+	<form id="form_reg" action="/reg" method="POST">
     <!--注册信息填写 -->
     	<input name="registerAccount" id="registerAccount" type="text" placeholder="填写用户名" />
      <!--若要隐藏红色的提示，将sh.js中的#registerPrompt1~5的属性dispaly改为none -->
@@ -18,6 +19,7 @@
         <div class="registerPrompt" id="registerPrompt5">验证码不正确，请重新。</div>
         <div class="registerInfo registerPrompt">请仔阅读<a href="#">服务协议</a>以及<a href="#">隐私和Cookie声明</a>。提交表示已接受条款。</div>
         <input name="register" id="register" class="btnLogin" type="submit" value="提交"/>
+	</form>
     </div>
 </div>
 </%block>

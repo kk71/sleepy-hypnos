@@ -8,12 +8,15 @@ author: kk(fkfkbill@gmail.com)
 
 
 from django.conf.urls import patterns, include, url
+from django.conf import settings
+from hypnos import views
+from djangomako import tmpldebug
 
 from django.contrib import admin
 admin.autodiscover()
 
 
-from hypnos import views
+
 
 urlpatterns = patterns('',
 	url(r'^grappelli/', include('grappelli.urls')),
@@ -32,3 +35,8 @@ urlpatterns = patterns('',
 	url(r"^analysis/?(.*)/?(.*)/?$",views.analysis),
 	url(r"^$",views.index),
 )
+
+if settings.DEBUG==True:
+	urlpatterns+=patterns("",
+			url(r"^tmpldebug/(.*)/?$",tmpldebug)
+	)

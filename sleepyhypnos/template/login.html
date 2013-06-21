@@ -11,14 +11,13 @@
 
     <!--登录信息填写 -->
 	<form id="form_login" action="/log" method="POST">
-
-    	<input name="account" id="inputAccount" type="text" placeholder="帐号" />
-		<input name="password" id="inputPassword" type="password" placeholder="密码" />
-		<input name="login" id="login" class="btnLogin" type="submit" value="登录"/>
+		<input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
+        <input name="account" id="inputAccount" type="text" placeholder="帐号" />
+	    <input name="password" id="inputPassword" type="password" placeholder="密码" />
+	    <input name="login" id="login" class="btnLogin" type="submit" value="登录"/>
 	</form>
     </div>
     <ul>
-    	<li><a href="#">找回密码</a></li>
         <li><a href="/reg">注册帐号</a></li>
     </ul>
 </div>

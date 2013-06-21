@@ -11,6 +11,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from djangomako import render_to_response
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import auth
 import pdb
 
 
@@ -51,8 +52,26 @@ def loginout(request):
 		return HttpResponseRedirect("/")
 
 	else:
-		dic={}
-		return render_to_response("login.html",dic)
+		if request.method=="GET":
+			dic={
+				"not_matched_prompt":False,
+			}
+		else:
+			user_id=request.POST["account"]
+			user_key=request.POST["password"]
+			user_tolog=auth.authenticate(username=user_id,password=user_key)
+			if user_tolog!=None:
+				if user_tolog.is_active==True:
+					auth.login(request,user_tolog)
+					return HttpResponseRedirect("/")
+				else:
+					return render_to_response("") #需要一个“用户被禁用”的模板？
+			else:
+				dic={
+					"not_matched_prompt":True
+				}
+		return render_to_response("login.html",dic,request=request)
+
 
 
 
