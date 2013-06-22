@@ -6,14 +6,14 @@
 	<form id="form_reg" action="/reg" method="POST">
 		<input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>
         <!--注册信息填写 -->
-    	<input name="registerAccount" id="registerAccount" type="text" placeholder="用户名" />
+    	<input name="account" id="registerAccount" type="text" placeholder="用户名" />
 
 		%if username_taken_prompt==True:
         <div class="registerPrompt" id="registerPrompt1">此用户名已被占用。</div>
 		%endif
 
-		<input name="registerPassword" id="registerPassword" type="password" placeholder="密码" />
-        <input name="registerRePassword" id="registerRePassword" type="password" placeholder="核对密码" />
+		<input name="password" id="registerPassword" type="password" placeholder="密码" />
+        <input name="repassword" id="registerRePassword" type="password" placeholder="核对密码" />
 
 		%if password_not_matched_prompt==True:
         <div class="registerPrompt" id="registerPrompt3">密码不匹配:(</div>

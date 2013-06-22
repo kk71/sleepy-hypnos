@@ -15,6 +15,7 @@ from django.contrib import auth
 import pdb
 
 from hypnos.captcha_gen import captcha_manage
+from hypnos import forms
 
 
 
@@ -38,11 +39,9 @@ def reg(request):
 '''
 	if request.user.is_authenticated():
 		return HttpResponseRedirect("/log")
-
 	else:
+		captcha_m=captcha_manage(request)
 		if request.method=="GET":
-			captcha_m=captcha_manage(request)
-
 			dic={
 				"captcha_url":captcha_m.gen(),
 				"username_taken_prompt":False,
@@ -51,6 +50,9 @@ def reg(request):
 			}
 			return render_to_response("register.html",dic,request=request)
 		else:
+			regform=forms.reg(request.POST)
+			if not regform.is_valid():
+				
 
 
 

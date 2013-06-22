@@ -88,7 +88,7 @@ class ImageChar():
 			x = start + self.fontSize * i + random.randint(0, gap) + gap * i
 			self.drawText((x, random.randint(-5, 5)), char, self.randRGB())
 			self.rotate()
-		self.randLine(3)
+		self.randLine(settings.CAPTCHA_LINE)
 
 
 	def save(self, path):
@@ -110,7 +110,7 @@ class captcha_manage():
 		图片url
 	'''
 		ic = ImageChar(fontColor=(100,211, 90))
-		ic.randChinese(3)
+		ic.randChinese(settings.CAPTCHA_CHAR_NUM)
 		ic.save(settings.CAPTCHA_DIR+'/test.png')
 		redis_db.set(self.request.COOKIES["sessionid"],ic.chars)
 		return settings.CAPTCHA_URL_PREFIX+"/test.png"
