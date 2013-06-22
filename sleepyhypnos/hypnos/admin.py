@@ -35,5 +35,5 @@ class archiveAdmin(admin.ModelAdmin):
 
 
 #register to the admin
-#admin.site.register(sleep,sleepAdmin)
+admin.site.register(sleep,sleepAdmin)
 admin.site.register(archive,archiveAdmin)

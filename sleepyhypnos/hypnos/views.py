@@ -14,6 +14,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 import pdb
 
+from hypnos.captcha_gen import captcha_manage
+
 
 
 #======================================
@@ -38,8 +40,18 @@ def reg(request):
 		return HttpResponseRedirect("/log")
 
 	else:
-		dic={}
-		return render_to_response("reg.html",dic)
+		if request.method=="GET":
+			captcha_m=captcha_manage(request)
+
+			dic={
+				"captcha_url":captcha_m.gen(),
+				"username_taken_prompt":False,
+				"password_not_matched_prompt":False,
+				"captcha_not_matched_prompt":False
+			}
+			return render_to_response("register.html",dic,request=request)
+		else:
+
 
 
 

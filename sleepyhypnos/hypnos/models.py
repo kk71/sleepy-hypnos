@@ -24,6 +24,13 @@ class sleep(models.Model):
 	to_archive=				ForeignKey("archive",verbose_name="归档于")
 	diary=					TextField(blank=True,null=True,verbose_name="日记")
 
+
+	#=======================
+	def save(self):
+		
+		super().save()
+
+
 	class Meta():
 		verbose_name="睡眠记录"
 		verbose_name_plural=verbose_name
@@ -38,6 +45,13 @@ class archive(models.Model):
 	year=					SmallIntegerField(verbose_name="年",unique=True)
 	month=					SmallIntegerField(verbose_name="月",unique=True)
 	sleeps=					ManyToManyField("sleep",blank=True,null=True,verbose_name="睡眠记录")
+
+
+	#=======================
+	def save(self):
+		
+		super().save()
+
 
 	class Meta():
 		verbose_name="归档"
