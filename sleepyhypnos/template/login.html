@@ -9,6 +9,10 @@
 	<div class="registerPrompt loginPrompt">帐号和密码不匹配，请重新填写。</div>
 	%endif
 
+	%if user_locked_prompt==True:
+	<div class="registerPrompt loginPrompt">此账户已被停用，请联系管理员。</div>
+	%endif
+
     <!--登录信息填写 -->
 	<form id="form_login" action="/log" method="POST">
 		<input type="hidden" name="csrfmiddlewaretoken" value="${csrf_token}"/>

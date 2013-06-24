@@ -11,15 +11,19 @@ from django.http import HttpResponse,HttpResponseRedirect
 from djangomako import render_to_response
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-from django.contrib import auth
+from django.conf import settings
 import pdb
 
-from hypnos.captcha_gen import captcha_manage
 from hypnos import forms
+
+from hypnos.captcha import captcha_gen
+
+
 
 
 
 #======================================
+@login_required
 def index(request):
 	'''
 '''
@@ -34,25 +38,38 @@ def index(request):
 
 
 #======================================
+def captcha(request):
+	'''
+获取验证码
+'''
+	return HttpResponse(captcha_gen(request.COOKIES["sessionid"]),content_type="image/png")
+
+
+
+#======================================
 def reg(request):
 	'''
 '''
 	if request.user.is_authenticated():
-		return HttpResponseRedirect("/log")
+		return HttpResponseRedirect("/")
+
 	else:
-		captcha_m=captcha_manage(request)
-		if request.method=="GET":
-			dic={
-				"captcha_url":captcha_m.gen(),
+		dic={
 				"username_taken_prompt":False,
 				"password_not_matched_prompt":False,
 				"captcha_not_matched_prompt":False
-			}
-			return render_to_response("register.html",dic,request=request)
-		else:
-			regform=forms.reg(request.POST)
-			if not regform.is_valid():
-				
+		}
+		if request.method=="POST":
+			reg_form=forms.register(request)
+			if reg_form==0:
+				return HttpResponseRedirect("/")
+			elif reg_form==1:
+				dic.update({"username_taken_prompt":True})
+			elif reg_form==2:
+				dic.update({"password_not_matched_prompt":True})
+			elif reg_form==3:
+				dic.update({"captcha_not_matched_prompt":True})
+		return render_to_response("register.html",dic,request=request)
 
 
 
@@ -66,24 +83,22 @@ def loginout(request):
 		return HttpResponseRedirect("/")
 
 	else:
-		if request.method=="GET":
-			dic={
-				"not_matched_prompt":False,
-			}
-		else:
-			user_id=request.POST["account"]
-			user_key=request.POST["password"]
-			user_tolog=auth.authenticate(username=user_id,password=user_key)
-			if user_tolog!=None:
-				if user_tolog.is_active==True:
-					auth.login(request,user_tolog)
-					return HttpResponseRedirect("/")
-				else:
-					return render_to_response("") #需要一个“用户被禁用”的模板？
-			else:
-				dic={
+		dic={
+			"not_matched_prompt":False,
+			"user_locked_prompt":False,
+		}
+		if request.method=="POST":
+			login_form=forms.login(request)
+			if login_form==0:
+				return HttpResponseRedirect("/")
+			elif login_form==1:
+				dic.update({
 					"not_matched_prompt":True
-				}
+				})
+			elif login_form==2:
+				dic.update({
+					"user_locked_prompt":True
+				})
 		return render_to_response("login.html",dic,request=request)
 
 

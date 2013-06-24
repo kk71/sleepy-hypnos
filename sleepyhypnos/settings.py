@@ -42,9 +42,8 @@ CAPTCHA_REDIS = {
 # captcha config
 # where captcha images files served
 CAPTCHA_DIR=r"./captcha"
-CAPTCHA_URL_PREFIX=r"http://localhost/captcha"
 CAPTCHA_TTC=r"./fonts/wqy.ttc"
-CHN_CHAR_TABLE_FILE=r"./gb2312.txt"
+CHN_CHAR_TABLE_FILE="./test.txt"#r"./gb2312.txt"
 CAPTCHA_CHAR_NUM=3
 CAPTCHA_LINE=3
 

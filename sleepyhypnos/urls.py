@@ -25,6 +25,7 @@ urlpatterns = patterns('',
 	#account management
 	url(r"^reg/?$",views.reg),
 	url(r"^log/?$",views.loginout),
+	url(r"^captcha/?$",views.captcha),
 	url(r"^config/?$",views.config),
 	url(r"^change-password/?$",views.change_password),
 	

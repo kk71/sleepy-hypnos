@@ -8,7 +8,6 @@ author:kK(fkfkbill@gmail.com)
 
 
 from django.contrib import admin
-
 from hypnos.models import *
 
 from django.utils.timezone import template_localtime

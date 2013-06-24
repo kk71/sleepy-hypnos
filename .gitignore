@@ -40,3 +40,6 @@ nosetests.xml
 
 # sqilte3 db file
 *.db
+
+#captcha temporary
+./sleepyhypnos/captcha/*

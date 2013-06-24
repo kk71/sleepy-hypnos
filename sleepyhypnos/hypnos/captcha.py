@@ -7,9 +7,10 @@ author:kk(fkfkbill@gmail.com)
 '''
 
 from django.conf import settings
-import redis
-import random
+import random,redis
+from datetime import datetime
 from PIL import Image,ImageDraw,ImageFont
+
 
 try:
 	redis_db = redis.StrictRedis(host=settings.CAPTCHA_REDIS["host"], port=settings.CAPTCHA_REDIS["port"], db=settings.CAPTCHA_REDIS["db"])
@@ -17,14 +18,14 @@ except:
 	print("Error: redis db isn't well prepared.")
 	exit()
 
+
 try:
 	table_file=open(settings.CHN_CHAR_TABLE_FILE,"r")
-	chn_gb2312_table=table_file.read()
+	chn_gb2312_table=table_file.read()[:-1]
 	table_file.close()
 except:
-	print("Error: GB2312 char table")
+	print("Error: GB2312 char table doesn't exist.")
 	exit()
-
 
 
 
@@ -97,43 +98,28 @@ class ImageChar():
 
 
 #=========================================================
-class captcha_manage():
-	def __init__(self,request):
-		self.request=request
-		return
+def captcha_gen(sessionid):
+	n=datetime.now()
+	rand_img_file='/%s%s%s%s%s%s-%s.png'%(n.year,n.month,n.day,n.hour,n.minute,n.second,\
+											random.randint(111111,999999))
+
+	ic = ImageChar(fontColor=(100,211, 90))
+	ic.randChinese(settings.CAPTCHA_CHAR_NUM)
+	ic.save(settings.CAPTCHA_DIR+rand_img_file)
+	redis_db.set(sessionid,ic.chars)
+
+	img_file=open(settings.CAPTCHA_DIR+rand_img_file,"rb")
+	img=img_file.read()
+	img_file.close()
+	return img
 
 
-	def gen(self):
-		'''
-	生成验证码图片，并将值存放在redis数据库中	
-	return:
-		图片url
-	'''
-		ic = ImageChar(fontColor=(100,211, 90))
-		ic.randChinese(settings.CAPTCHA_CHAR_NUM)
-		ic.save(settings.CAPTCHA_DIR+'/test.png')
-		redis_db.set(self.request.COOKIES["sessionid"],ic.chars)
-		return settings.CAPTCHA_URL_PREFIX+"/test.png"
 
-
-	def verify(self):
-		'''
-	验证request的session值和redis中储存的是否一致，
-	若不一致则删除原验证码图片和redis数据，重新建立新的验证码和图片
-	注意：form中验证码的索引名为“captcha”
-	return:
-		验证成功：True
-		验证失败：新的验证码图片url
-	'''
-		try:
-			sessionid=self.request.COOKIES["sessionid"]
-			captcha_val=self.request.POST["captcha"]
-			val_in_db=redis_db.get(sessionid)
-			if val_in_db is None:
-				return self.gen()
-			if val_in_db==captcha_val:
-				return True
-			else:
-				return self.gen()
-		except:
-			return self.gen()
+#=========================================================
+def captcha_verify(sessionid,value):
+	if value!="" and redis_db.get(sessionid).decode("utf-8")==value:
+		redis_db.delete(sessionid)
+		return True
+	elif redis_db.get(sessionid)!=None:
+		redis_db.delete(sessionid)
+	return False
